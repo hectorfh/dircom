@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# MD5 (./lulu 2010/España/DSC05537.JPG) = 5a6199725053c9d71d8b45e01af7f40c
+
+MD5SUM=`md5sum $1`
+
+# https://stackoverflow.com/questions/19482123/extract-part-of-a-string-using-bash-cut-split
+
+MD5=${MD5SUM% *}
+FILENAME=${MD5SUM##* }
+
+echo MD5 "("$FILENAME")" = $MD5
